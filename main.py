@@ -13,14 +13,14 @@ def delete_image_files():
         os.remove(img)
 
 def paint_gif():
-    imageio.mimsave('map91.gif', [imageio.imread(img) for img in images], duration=1)
+    imageio.mimsave('map.gif', [imageio.imread(img) for img in images], duration=1)
 
 
 def paint(t, route, distance, k):
     # Построение графика маршрута
     x = [city[0] for city in cities]
     y = [city[1] for city in cities]
-    plt.figure(dpi=200)
+    plt.figure(dpi=100)
     plt.plot(x, y, 'ro')  # Рисуем города
     for i in range(len(route) - 1):
         plt.plot([cities[route[i]][0], cities[route[i + 1]][0]], [cities[route[i]][1], cities[route[i + 1]][1]],
