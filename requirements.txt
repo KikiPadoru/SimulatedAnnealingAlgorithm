@@ -1,0 +1,2 @@
+imageio~=2.34.0
+matplotlib~=3.8.3
