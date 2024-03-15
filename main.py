@@ -13,7 +13,7 @@ def delete_image_files():
         os.remove(img)
 
 def paint_gif():
-    imageio.mimsave('map.gif', [imageio.imread(img) for img in images], duration=1)
+    imageio.mimsave('map91.gif', [imageio.imread(img) for img in images], duration=1)
 
 
 def paint(t, route, distance, k):
@@ -52,13 +52,13 @@ def total_distance(route, cities):
     return total
 
 
-def simulated_annealing(cities, flag, T_max=100000, T_min=1, iterations=1000):
+def simulated_annealing(cities, flag, T_max=10000, T_min=1, iterations=1000):
     current_route = list(range(len(cities)))  # начальный маршрут
     random.shuffle(current_route)  # случайное начальное решение
     current_distance = total_distance(current_route, cities)
 
     T = T_max
-    alpha = 0.91  # коэффициент охлаждения
+    alpha = 0.992  # коэффициент охлаждения
 
     best_distance = current_distance
     best_route = current_route
